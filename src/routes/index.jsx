@@ -12,7 +12,7 @@ export function Routes() {
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
-                    backgroundColor: "#566573",
+                    backgroundColor: "#3DC0CD",
                     borderTopWidth: 0,
                 },
                 tabBarActiveTintColor: "#fff"
