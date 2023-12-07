@@ -1,5 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Map } from "../pages/Map";
+import { Timer } from "../pages/Timer";
+import { Pokepedia } from "../pages/Pokepedia";
 
 import { FontAwesome5} from "@expo/vector-icons"
 
@@ -22,6 +24,34 @@ export function Routes() {
             <Tab.Screen
                 name="Map"
                 component={Map}
+                options={{
+                    tabBarIcon: ({ focused, size, color }) => {
+                        if (focused){
+                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#82E0AA"}/>
+                        }
+                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#FFF"}/>
+                      }
+                }}
+            />
+
+
+
+            <Tab.Screen
+                name="Timer"
+                component={Timer}
+                options={{
+                    tabBarIcon: ({ focused, size, color }) => {
+                        if (focused){
+                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#82E0AA"}/>
+                        }
+                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#FFF"}/>
+                      }
+                }}
+            />
+
+            <Tab.Screen
+                name="Pokepedia"
+                component={Pokepedia}
                 options={{
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused){
