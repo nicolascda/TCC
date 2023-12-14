@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Cardfavorito from "../../components/Cardfavorito";
 
 export function Favorites(){
-    const [favorites, definirFavorites] = useState([{id:"1",value:"pikachu"}, {id:"2",value:"eevee"}])
+    const [favorites, definirFavorites] = useState([{id:"1",value:"pikachu"}, {id:"2",value:"quaxly"}, {id:"3", value:"sobble"}])
 
     const [novoFavorito,  definirNovoFavorito] = useState('');
 
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50
+        marginTop: 50,
+        backgroundColor: "#F2F3F4",
     },
       
     input: {

@@ -5,7 +5,7 @@ import { Pokepedia } from "../pages/Pokepedia";
 import { Profile } from "../pages/Profile";
 import { Favorites } from "../pages/PokemonsFavorites";
 
-import { FontAwesome5, MaterialCommunityIcons, Ionicons} from "@expo/vector-icons"
+import { FontAwesome5, MaterialCommunityIcons, Ionicons, AntDesign} from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
@@ -70,9 +70,9 @@ export function Routes() {
                 options={{
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused){
-                        return<MaterialCommunityIcons name="cellphone" size={size} color={"#FF0000"}/>
+                        return<AntDesign name="star" size={size} color={"#F1C40F"}/>
                         }
-                        return<MaterialCommunityIcons name="cellphone" size={size} color={"#FFF"}/>
+                        return<AntDesign name="staro" size={size} color={"#FFF"}/>
                       }
                 }}
             />

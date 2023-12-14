@@ -45,7 +45,7 @@ export default function Cardfavorito(props) {
 
 const styles = StyleSheet.create({
     card: {
-      width: 345,
+      width: 340,
       height: 250, // largura desejada do cartão
       borderWidth: 1,
       borderColor: '#000',
