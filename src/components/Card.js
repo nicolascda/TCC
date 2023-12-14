@@ -59,7 +59,7 @@ export default function Card(props) {
 const styles = StyleSheet.create({
     card: {
       width: 350,
-      height: 600, // largura desejada do cartão
+      height: 500, // largura desejada do cartão
       borderWidth: 1,
       borderColor: '#000',
       borderRadius: 8,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     },
     cardImage: {
       width: '100%',
-      height: 350, // altura desejada da imagem
+      height: 250, // altura desejada da imagem
       
     },
 

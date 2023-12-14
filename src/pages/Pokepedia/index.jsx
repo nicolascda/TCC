@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { View, StyleSheet, Text, Button, TextInput } from "react-native";
+import { View, StyleSheet, Text, Button, TextInput, Alert, KeyboardAvoidingView } from "react-native";
 import axios from 'axios';
 import Card from "../../components/Card";
 
@@ -13,25 +13,47 @@ export function Pokepedia ()
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const {data} = await axios.get("https://pokeapi.co/api/v2/pokemon/charizard")
+                const {data} = await axios.get("https://pokeapi.co/api/v2/pokemon/" + name)
                 console.log(data.sprites.front_default)
                 definirData(data)
             } catch (erro) {
                 console.log('Erro ao obter dados:' , erro)
+                Alert.alert(
+                    "Pokemon não encontrado",
+                    "Verifique o nome escrito",
+                    [
+                        {text: "OK"} // para criar um botão
+                    ],
+                    { cancelable: false }
+                    )
             }
         }
 
         fetchData();
-    },[])   // o , [] serve para executar uma vez
+    },[name])   // o , [] serve para executar uma vez
 
-    return <View style = {styles.container}>
+    function pesquisaPokemon() {
+        definirName(typedName.toLowerCase())
+    }
+
+    return <KeyboardAvoidingView style = {styles.container}
+        behavior={"padding"}
+    >
+
         { data && data.sprites && (
             <Card data ={data}/>
         )}
 
+        <TextInput
+            style={styles.input}
+            placeholder="Digite o nome do Pokemon"
+            value={typedName}
+            onChangeText={ (text) => definirTypedName(text)}
+        />
 
+        <Button title="Pesquisar" onPress={pesquisaPokemon} color={"grey"}/>
 
-    </View>
+    </KeyboardAvoidingView>
 
 }
 
