@@ -12,6 +12,9 @@ export function Timer() {
         setInterval(function() {
             definirTempo(tempo -1)
         }, 1000)
+        return function() {
+            clearInterval(temporalizador)
+        }
     }, [tempo])
 
     return <View style={ styles.container }>
@@ -28,7 +31,7 @@ export function Timer() {
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        backgroundColor: "#20262e",
+        backgroundColor: "#2A3340",
         flex: 1,
         justifyContent: "center",
     }

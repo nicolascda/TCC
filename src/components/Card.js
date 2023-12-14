@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
       margin: 10,
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor:"#ddd"
+      backgroundColor:"#C0C3C8"
     },
     cardImage: {
       width: '100%',

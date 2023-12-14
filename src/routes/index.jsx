@@ -3,8 +3,9 @@ import { Map } from "../pages/Map";
 import { Timer } from "../pages/Timer";
 import { Pokepedia } from "../pages/Pokepedia";
 import { Profile } from "../pages/Profile";
+import { Favorites } from "../pages/PokemonsFavorites";
 
-import { FontAwesome5} from "@expo/vector-icons"
+import { FontAwesome5, MaterialCommunityIcons, Ionicons} from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ export function Routes() {
                 options={{
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused){
-                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#82E0AA"}/>
+                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#D58100"}/>
                         }
                         return<FontAwesome5 name="map-marker-alt" size={size} color={"#FFF"}/>
                       }
@@ -43,9 +44,9 @@ export function Routes() {
                 options={{
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused){
-                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#82E0AA"}/>
+                        return<Ionicons name="timer-outline" size={size} color={"#00118D"}/>
                         }
-                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#FFF"}/>
+                        return<Ionicons name="timer" size={size} color={"#FFF"}/>
                       }
                 }}
             />
@@ -56,9 +57,22 @@ export function Routes() {
                 options={{
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused){
-                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#82E0AA"}/>
+                        return<MaterialCommunityIcons name="cellphone-information" size={size} color={"#FF0000"}/>
                         }
-                        return<FontAwesome5 name="map-marker-alt" size={size} color={"#FFF"}/>
+                        return<MaterialCommunityIcons name="cellphone" size={size} color={"#FFF"}/>
+                      }
+                }}
+            />
+
+            <Tab.Screen
+                name="Favorites"
+                component={Favorites}
+                options={{
+                    tabBarIcon: ({ focused, size, color }) => {
+                        if (focused){
+                        return<MaterialCommunityIcons name="cellphone" size={size} color={"#FF0000"}/>
+                        }
+                        return<MaterialCommunityIcons name="cellphone" size={size} color={"#FFF"}/>
                       }
                 }}
             />
